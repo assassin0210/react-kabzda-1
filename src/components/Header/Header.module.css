@@ -1,0 +1,50 @@
+.header{
+  grid-area: h;
+  background-color: rgb(97, 130, 192); 
+  display: flex;
+  flex-wrap:nowrap;
+  align-items:center;
+  padding:10px 0 10px 20px; 
+  
+  
+ 
+}
+.header img { 
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 7px;  
+  padding-right: 5px;
+}
+.box_img{
+  width: auto;
+  height: 50px;
+  display: inline;
+  margin-bottom: -5px;
+  display: flex;
+  align-items:center;
+  cursor: pointer;
+}
+.first_b_logo{
+  font-size: 23px;
+  margin: 0; 
+  display: inline-block;
+ 
+}
+.secant_b_logo{
+  margin: 0; 
+  font-size: 20px;
+  display: inline-block;  
+}
+.box_text{
+  margin: 0;
+  display: inline;
+  
+  background: linear-gradient(90deg, #ebd86c 33%, gold 66%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #0B2349;
+  
+  margin: 20px auto;
+  z-index: 1;
+}
+

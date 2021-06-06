@@ -1,0 +1,42 @@
+
+.item{
+  color: rgb(181, 255, 62);
+  display: inline-block;
+}
+
+.avatar{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-image: url('https://downloader.disk.yandex.ru/preview/18a9bd5a12ff003167bd5c9b66a32cccf9f5ce28b68e462f1f595eaca802349e/60bcfa7d/rfh92ZOV5DhZL1-pxgeYQQ7_-f93dOU5m5Z7dsJkByI01caTrnVAchPP75pExB3aLieO_erCzEfqW8C5rWiLbQ%3D%3D?uid=0&filename=2021-06-06_15-39-19.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=0&tknv=v2&size=2048x2048');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 120%;
+  display: inline-block;
+}
+.like img{
+  margin-left: 4px;
+  width: 15px;
+  height: 15px;
+  -webkit-filter: drop-shadow(3px 5px 5px #000);
+  filter: drop-shadow(3px 5px 5px rgb(80, 77, 77));
+}
+
+.like{
+  cursor: pointer;
+  display: flex;
+  align-items: center;  
+}
+
+.like p {
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color:rgb(48, 38, 38);
+  -webkit-filter: drop-shadow(3px 5px 5px #000);
+  filter: drop-shadow(3px 5px 5px rgb(80, 77, 77));
+}
+.post{
+  padding-left: 10px;
+}

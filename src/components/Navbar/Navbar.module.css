@@ -1,0 +1,26 @@
+.nav{
+  grid-area: n;
+  background-color: #6182c0;
+  padding-left: 37px;
+  margin-top: -5px;
+  line-height: 32px;
+  padding-right: 20px;  
+}
+
+
+.item{   
+  font-size: 20px;
+  font-family: sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;  
+}   
+a{
+  text-decoration: none;
+  color: white;  
+}
+
+.item a:hover{
+  content:'';
+  color: rgb(177, 177, 177)
+
+}
