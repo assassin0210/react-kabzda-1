@@ -1,0 +1,10 @@
+.discription_block{
+  padding: 10px;
+}
+.box_img{
+  height: 200px;
+  background-image: url("https://theessentialman.com/wp-content/uploads/2019/06/summer-style-guide-featured-1-scaled-e1607452033831.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 58%;
+  background-size: cover;
+}

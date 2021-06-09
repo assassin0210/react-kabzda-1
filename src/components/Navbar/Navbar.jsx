@@ -1,24 +1,25 @@
 import React from 'react';
 import s from "./Navbar.module.css";
+import {NavLink} from "react-router-dom";
 
 
 const Navbar = () => {
     return (
         <nav className={s.nav}>
             <div className={s.item}>
-                <a href='/Profile'>Profile</a>
+                <NavLink  to='/Profile' activeClassName={s.active}>Profile</NavLink>
             </div>
             <div className={s.item}>
-                <a href='/Dialogs'>Messages</a>
+                <NavLink to='/Dialogs' activeClassName={s.active} >Messages</NavLink>
             </div>
             <div className={s.item}>
-                <a href='/News'>News</a>
+                <NavLink to='/News' activeClassName={s.active} >News</NavLink>
             </div>
             <div className={s.item}>
-                <a href='/Music'>Music</a>
+                <NavLink to='/Music' activeClassName={s.active} >Music</NavLink>
             </div>
             <div className={s.item}>
-                <a href='/Settings'>Settings</a>
+                <NavLink to='/Settings' activeClassName={s.active} >Settings</NavLink>
             </div>
         </nav>
     );
@@ -27,6 +28,3 @@ const Navbar = () => {
 
 export default Navbar;
 
-function Arx() {
-
-}

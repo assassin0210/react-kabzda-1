@@ -1,1 +1,7 @@
 
+.posts_block{
+  padding: 10px;
+}
+.posts_block textarea, button{
+  display: block;
+}

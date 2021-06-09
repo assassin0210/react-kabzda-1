@@ -1,8 +1,10 @@
 import React from "react";
 import s from "./Post.module.css";
 
-const Post = (props) => {  
-  return (   
+
+
+const Post = (props) => {
+  return (
      <div className = {s.post}>
        <div className={s.avatar}></div>
        <div className={s.item}>{ props.message }</div>
@@ -11,10 +13,11 @@ const Post = (props) => {
         <p>{props.likeCount}</p>
          </div>
      </div>
-   
 
-        
+
+
   );
 };
 
 export default Post;
+
