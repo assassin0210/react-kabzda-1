@@ -7,13 +7,15 @@ import Message from "../Dialogs/Message/Message";
 
 
 
-const Profile = () => {
+const Profile = (props) => {
+
+
 
     return (
         <div className={s.content}>
             <ProfileInfo/>
-            <MyPosts/>
-            <DialogItem/>
+            <MyPosts posts={props.state.posts} />
+            <DialogItem />
             <Message/>
         </div>
     );

@@ -1,0 +1,27 @@
+.dialog a {
+  display: flex;
+  align-items: center;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.dialog{
+  color: white;
+}
+
+.dialog a img {
+  width: 54px;
+  padding: 10px;
+  transition: all 0.2s;
+}
+
+.link .dialog a{
+  color: white;
+  transition: all 0.3s;
+}
+
+.link .dialog a.active{
+  transition: all 0.2s;
+  font-size: 17px;
+  color: gold;
+}
