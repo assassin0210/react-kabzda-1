@@ -6,16 +6,19 @@ import DialogItem from "../Dialogs/DialogItem/DialogItem";
 import Message from "../Dialogs/Message/Message";
 
 
-
 const Profile = (props) => {
-
 
 
     return (
         <div className={s.content}>
             <ProfileInfo/>
-            <MyPosts addPost={props.addPost} posts={props.state.posts} />
-            <DialogItem />
+            <MyPosts
+                addPost={props.addPost}
+                newPostText={props.profilePage.newPostText}
+                updateTextPost={props.updateTextPost}
+                posts={props.profilePage.posts}
+            />
+            <DialogItem/>
             <Message/>
         </div>
     );
