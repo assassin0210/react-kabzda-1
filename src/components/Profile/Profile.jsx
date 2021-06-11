@@ -3,8 +3,6 @@ import MyPosts from "./MyPosts/MyPosts";
 import s from "./Profile.module.css";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import DialogItem from "../Dialogs/DialogItem/DialogItem";
-import Message from "../Dialogs/Message/Message";
-
 
 const Profile = (props) => {
 
@@ -13,13 +11,11 @@ const Profile = (props) => {
         <div className={s.content}>
             <ProfileInfo/>
             <MyPosts
-                addPost={props.addPost}
                 newPostText={props.profilePage.newPostText}
-                updateTextPost={props.updateTextPost}
+                dispatch={props.dispatch}
                 posts={props.profilePage.posts}
             />
             <DialogItem/>
-            <Message/>
         </div>
     );
 };

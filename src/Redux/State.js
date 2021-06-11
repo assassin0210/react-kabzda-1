@@ -1,5 +1,5 @@
-let store ={
-    _state:{
+let store = {
+    _state: {
         profilePage: {
             posts: [
                 {id: 1, message: 'Hi, how are you?', likeCount: 12},
@@ -16,14 +16,26 @@ let store ={
                     name: 'Andrey',
                     avatar: <img src="https://image.flaticon.com/icons/png/128/145/145843.png" alt=""/>
                 },
-                {id: 2, name: 'Sveta', avatar: <img src="https://image.flaticon.com/icons/png/128/145/145846.png" alt=""/>},
+                {
+                    id: 2,
+                    name: 'Sveta',
+                    avatar: <img src="https://image.flaticon.com/icons/png/128/145/145846.png" alt=""/>
+                },
                 {
                     id: 3,
                     name: 'Daniela',
                     avatar: <img src="https://image.flaticon.com/icons/png/128/145/145847.png" alt=""/>
                 },
-                {id: 4, name: 'Sasha', avatar: <img src="https://image.flaticon.com/icons/png/128/145/145844.png" alt=""/>},
-                {id: 5, name: 'Igor', avatar: <img src="https://image.flaticon.com/icons/png/128/145/145845.png" alt=""/>},
+                {
+                    id: 4,
+                    name: 'Sasha',
+                    avatar: <img src="https://image.flaticon.com/icons/png/128/145/145844.png" alt=""/>
+                },
+                {
+                    id: 5,
+                    name: 'Igor',
+                    avatar: <img src="https://image.flaticon.com/icons/png/128/145/145845.png" alt=""/>
+                },
                 {
                     id: 6,
                     name: 'Nastya',
@@ -51,44 +63,31 @@ let store ={
             ]
         },
     },
-    getState(){
-        return this._state;
+    _callSubscriber() {
+        console.log('поменялось')
     },
-    _callSubscriber () {console.log('поменялось')},
-
-    addPost  ()  {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likeCount: 0,
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updateTextPost  (newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-
-    },
-    updateTextMessage  (newText)  {
-        this._state.dialogsPage.newMessageText = newText;
-        this._callSubscriber();
-
-    },
-    addMessage  ()  {
-        let newMessages = {
-            id: 3,
-            message: this._state.dialogsPage.newMessageText,
-        };
-        this._state.dialogsPage.messages.push(newMessages);
-        this._state.dialogsPage.newMessageText = '';
-        this._callSubscriber();
-    },
-    subscribe  (observer)  {
+    subscribe(observer) {
         this._callSubscriber = observer;
     },
+    getState() {
+        return this._state;
+    },
 
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likeCount: 0,
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
+        } else if (action.type === 'UPDATE-NEW-TEXT-POST') {
+            this._callSubscriber(this._state);
+            this._state.profilePage.newPostText = action.newText;
+        }
+    }
 }
 
 
