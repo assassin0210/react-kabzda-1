@@ -11,9 +11,9 @@ const Profile = (props) => {
         <div className={s.content}>
             <ProfileInfo/>
             <MyPosts
+                posts={props.profilePage.posts}
                 newPostText={props.profilePage.newPostText}
                 dispatch={props.dispatch}
-                posts={props.profilePage.posts}
             />
             <DialogItem/>
         </div>

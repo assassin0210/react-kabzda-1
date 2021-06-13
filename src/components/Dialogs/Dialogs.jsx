@@ -1,14 +1,27 @@
 import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from "./DialogItem/DialogItem";
+import Message from "./Messages/Messages";
+import {sendMessageCreator, updateNewMessageBodyCreator} from "../../Redux/dialogs-reducer";
 
 
 const Dialogs = (props) => {
 
-    let dialogsElements = props.dialogsPage.dialogs.map(d => <DialogItem avatar={d.avatar} name={d.name} id={d.id}/>);
+    let state =props.store.getState().dialogsPage
 
+    let dialogsElements = state.dialogs.map(d => <DialogItem avatar={d.avatar} name={d.name} id={d.id}/>);
+    let messagesElement = state.messages.map(m => <Message message={m.message}/>);
+    let newMessageBody = state.newMessageBody;
 
-    let newMessageElement = React.createRef()
+    let onSendMessageClick = () => {
+        props.store.dispatch(sendMessageCreator())
+    }
+
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.store.dispatch(updateNewMessageBodyCreator(body))
+
+    }
 
 
     return (
@@ -19,14 +32,18 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 <div>
-                    сообщения одно для всех
+                    <div>{messagesElement}</div>
+                    <div>
+                        <div><textarea
+                            value={newMessageBody}
+                            onChange={onNewMessageChange}
+                            placeholder='Enter your message'></textarea></div>
+                        <div>
+                            <button onClick={onSendMessageClick}>Send</button>
+                        </div>
+                    </div>
                 </div>
-                <div>
 
-                    <textarea  ref={newMessageElement}
-                              value={props.dialogsPage.newMessageText} cols="30" rows="5"/>
-                    <button >Add message</button>
-                </div>
 
             </div>
         </div>
@@ -34,4 +51,6 @@ const Dialogs = (props) => {
     );
 
 };
+
+
 export default Dialogs

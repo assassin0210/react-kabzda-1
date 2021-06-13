@@ -1,3 +1,7 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
 let store = {
     _state: {
         profilePage: {
@@ -51,7 +55,7 @@ let store = {
                 {id: 1, message: 'Hello, how are you?'},
                 {id: 2, message: 'I\'m good.I\'m studying to be a programmer!!'},
             ],
-            newMessageText: 'Привет, друг ',
+            newMessageBody: 'Привет, друг ',
         },
         sideBar: {
             friends: [
@@ -63,6 +67,8 @@ let store = {
             ]
         },
     },
+
+
     _callSubscriber() {
         console.log('поменялось')
     },
@@ -74,21 +80,21 @@ let store = {
     },
 
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likeCount: 0,
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
-        } else if (action.type === 'UPDATE-NEW-TEXT-POST') {
-            this._callSubscriber(this._state);
-            this._state.profilePage.newPostText = action.newText;
-        }
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._state.sideBar = sidebarReducer(this._state.sideBar, action)
+
+        this._callSubscriber(this._state);
+
     }
 }
+
+
+
+
+
+
 
 
 export default store;

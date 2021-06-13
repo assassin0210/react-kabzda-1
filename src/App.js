@@ -10,7 +10,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import FriendsLists from "./components/FriendsLists/FriendsLists";
-import store, {addMessage} from "./Redux/State";
+import store, {addMessage} from "./Redux/Store";
 
 
 const App = (props) => {
@@ -20,15 +20,14 @@ const App = (props) => {
             <Header/>
             <Navbar state={props.state.sideBar}/>
             <div className='app-wrapper-content'>
-                <Route path='/profile'render={() => <Profile
+                <Route path='/dialogs'
+                       render={() => <Dialogs store={props.store}/>}/>
 
-                    dispatch={props.dispatch}
-                    profilePage={props.state.profilePage}/>}/>
+                <Route path='/profile'
+                       render={() => <Profile
+                           profilePage={props.state.profilePage}
+                           dispatch={props.dispatch}/>}/>
 
-                <Route path='/dialogs' render={() => <Dialogs
-
-                    dispatch={props.dispatch}
-                    dialogsPage={props.state.dialogsPage}/>}/>
 
                 <Route path='/news' component={News}/>
                 <Route path='/music' component={Music}/>
