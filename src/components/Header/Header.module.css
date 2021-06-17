@@ -1,18 +1,19 @@
 .header{
   grid-area: h;
-  background-color: rgb(97, 130, 192); 
+  background-color: rgb(97, 130, 192);
   display: flex;
   flex-wrap:nowrap;
   align-items:center;
-  padding:10px 0 10px 20px; 
-  
-  
- 
+  padding:10px 0 10px 20px;
+  justify-content: space-between;
+
+
+
 }
-.header img { 
+.header img {
   max-width: 100%;
   max-height: 100%;
-  margin-bottom: 7px;  
+  margin-bottom: 7px;
   padding-right: 5px;
 }
 .box_img{
@@ -26,25 +27,35 @@
 }
 .first_b_logo{
   font-size: 23px;
-  margin: 0; 
+  margin: 0;
   display: inline-block;
- 
+
 }
 .secant_b_logo{
-  margin: 0; 
+  margin: 0;
   font-size: 20px;
-  display: inline-block;  
+  display: inline-block;
 }
 .box_text{
   margin: 0;
   display: inline;
-  
+
   background: linear-gradient(90deg, #ebd86c 33%, gold 66%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: #0B2349;
-  
+
   margin: 20px auto;
   z-index: 1;
+}
+
+.loginBlock {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.loginBlock a{
+  text-decoration: none;
+  color: white;
 }
 
