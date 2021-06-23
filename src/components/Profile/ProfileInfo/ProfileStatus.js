@@ -5,11 +5,9 @@ class ProfileStatus extends React.Component {
     state = {
         editMode: false,
         status:this.props.status,
-
-    }
+         }
 
     activateEditMode = () => {
-
         this.setState({
             editMode: true,
         })
@@ -27,7 +25,16 @@ class ProfileStatus extends React.Component {
 
     }
 
+    componentDidUpdate(prevProps,prevState) {
+
+        if(prevProps.status !== this.props.status){
+            this.setState();
+
+        }
+        console.log('componentDidUpdate')
+    }
     render() {
+        console.log('render')
         return (
             <div>
                 {!this.state.editMode &&

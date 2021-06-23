@@ -1,9 +1,11 @@
 import React from "react";
 import s from "./Header.module.css";
-import {NavLink, Route} from "react-router-dom";
+import {NavLink,} from "react-router-dom";
 
 const Header = (props) => {
+
   return (<header className={s.header}>
+
       <div className={s.box_img}>
         <img src="https://image.flaticon.com/icons/png/512/809/809154.png"/>
         <div className={s.box_text}>
@@ -12,7 +14,7 @@ const Header = (props) => {
         </div>
       </div>
         <div className={s.loginBlock}>
-            {props.isAuth? props.login  :<NavLink to={'/login'}> Login </NavLink> }
+            {props.isAuth? <div>{props.login} - <button onClick={props.logout}> Log Out</button></div>  :<NavLink to={'/login'}> Login </NavLink> }
         </div>
     </header>
   );
