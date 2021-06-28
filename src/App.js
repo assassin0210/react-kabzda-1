@@ -28,6 +28,7 @@ class App extends Component {
             return <Preloader/>
         }
         return (
+
             <div className='app-wrapper'>
                 <HeaderContainerComponent/>
                 <Navbar/>
@@ -54,4 +55,4 @@ const mapStateToProps = (state) => ({
 
 export default compose(
     withRouter,
-    connect(mapStateToProps, {initializApp}))(App);
+    connect(mapStateToProps     , {initializApp}))(App);
