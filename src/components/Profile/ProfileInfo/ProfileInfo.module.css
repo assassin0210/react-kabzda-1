@@ -8,3 +8,13 @@
   background-position: 50% 58%;
   background-size: cover;
 }
+.photo{
+  width: 350px;
+  height: 350px;
+}
+.formSummaryError{
+  border: red 3px solid ;
+  padding: 5px;
+  color: darkred;
+
+}
