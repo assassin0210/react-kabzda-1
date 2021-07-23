@@ -8,7 +8,7 @@ import Settings from "./components/Settings/Settings";
 import FriendsLists from "./components/FriendsLists/FriendsLists";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainerComponent from "./components/Header/HeaderContainer";
-import Login from "./components/Login/login";
+import Login from "./components/Login/Login";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializApp} from "./Redux/app-reducer";
